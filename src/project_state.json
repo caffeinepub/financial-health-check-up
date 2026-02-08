@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a dynamic, professional Financial Health Check-Up web page with a 10-question yes/no questionnaire, score-based results, and a contact page with WhatsApp CTA, branded with Axis Max Life logo and a background image.",
+  "architectural_notes": [
+    "Use a simple yes-count score (0–10) derived from 10 yes/no inputs to determine the result category and display it dynamically."
+  ],
+  "known_issues": [
+    "Background image asset and Axis Max Life logo file were referenced but not provided in the conversation."
+  ],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Professional finance-themed background image with subtle pattern/gradient suitable for overlayed UI (financial-health-bg.dim_1920x1080.png)\n- Axis Max Life logo on transparent background, clean vector-like look (axis-max-life-logo.dim_600x200.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-dynamic-professional-financial-health-check-up-page-that-presents-exactly-10-provided-questions-with-yes-no-answers-only-no-free-text-allowing-the-user-to-answer-all-questions-and-submit",
+      "title": "Create a dynamic, professional Financial Health Check-Up page that presents exactly 10 provided questions with Yes/No answers only (no free-text), allowing the user to answer all questions and submit.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-scoring-and-results-display-based-on-the-total-number-of-yes-answers-and-show-the-result-immediately-after-submission-use-these-result-bands-inclusive-0-5-critical-zone-6-7-need-to-review-your-financial-plan-8-9-good-10-secure-also-display-the-numeric-score-e-g-your-score-7-10",
+      "title": "Implement scoring and results display based on the total number of “Yes” answers, and show the result immediately after submission. Use these result bands (inclusive): 0–5 = \"Critical Zone\"; 6–7 = \"Need to review your financial plan\"; 8–9 = \"Good\"; 10 = \"Secure\". Also display the numeric score (e.g., “Your score: 7/10”).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-dedicated-contact-page-or-clearly-separated-contact-section-reachable-via-navigation-offering-a-review-of-the-user-s-financial-health-by-the-app-owner-including-a-contact-now-button-that-opens-whatsapp-chat-to-91-88299-21156-use-a-wa-me-link",
+      "title": "Add a dedicated Contact page (or clearly separated Contact section reachable via navigation) offering a review of the user’s financial health by the app owner, including a “Contact Now” button that opens WhatsApp chat to +91 88299 21156 (use a wa.me link).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-branding-set-a-provided-background-image-behind-the-main-page-layout-and-display-an-axis-max-life-logo-in-the-ui-e-g-header-top-left-use-locally-served-static-assets-from-frontend-public-assets-generated",
+      "title": "Apply branding: set a provided background image behind the main page layout and display an Axis Max Life logo in the UI (e.g., header/top-left). Use locally served static assets from frontend/public/assets/generated.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-and-apply-a-consistent-coherent-visual-theme-for-a-professional-finance-insurance-experience-colors-typography-spacing-component-styling-across-the-questionnaire-and-contact-views-do-not-use-a-blue-purple-primary-palette",
+      "title": "Create and apply a consistent, coherent visual theme for a professional finance/insurance experience (colors, typography, spacing, component styling) across the questionnaire and contact views. Do not use a blue+purple primary palette.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create Financial Health Check-Up page with 10 provided questions in yes/no format",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement scoring and results display based on number of 'Yes' answers (1–5 critical, 5–7 review plan, 8–9 good, 10 secure)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add contact page/section with 'Contact Now' button linking to WhatsApp number +91 88299 21156 for financial health review",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Apply branding: set provided image as page background and include Axis Max Life logo",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Financial Health Check-Up",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

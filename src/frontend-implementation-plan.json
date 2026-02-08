@@ -1,0 +1,129 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Financial Health Check-Up (10-question Yes/No) with scoring results, WhatsApp contact, and branded theme",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a responsive Financial Health Check-Up questionnaire view with exactly 10 fixed questions and Yes/No-only answers, with submit disabled until complete.",
+      "acceptanceCriteria": [
+        "The page displays all 10 questions exactly as provided by the user.",
+        "Each question can be answered only with Yes or No (e.g., radio buttons, toggle, segmented control).",
+        "A Submit (or equivalent) action is available and is disabled until all 10 questions are answered.",
+        "The page layout is responsive (mobile + desktop) and looks professional."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/FinancialHealthCheckUp.tsx",
+          "operation": "create",
+          "description": "Create the questionnaire page component that renders the 10 provided questions from a local constant list, enforces Yes/No-only selection per question, tracks completion state, and disables submit until all 10 answers are selected. Use shadcn-ui components (e.g., Card, Button, RadioGroup or equivalent) to present a professional UI; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell that wires navigation to the questionnaire view as the default view and ensures the questionnaire page is reachable on initial load (no orphan page). Use shadcn-ui components for navigation elements where appropriate; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add scoring (Yes count) and show results immediately after submit using the specified inclusive bands, allowing re-submission after changes.",
+      "acceptanceCriteria": [
+        "After submitting, the UI shows the total Yes count out of 10.",
+        "The UI shows exactly one of the four result labels based on the score band.",
+        "The boundary overlap in the user text is resolved so that 0–5 maps to Critical Zone and 6–7 maps to Need to review your financial plan (no ambiguous outcomes).",
+        "The user can change answers and re-submit to get an updated result (or the result updates live)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/FinancialHealthCheckUp.tsx",
+          "operation": "modify",
+          "description": "Implement scoring logic that counts total Yes answers (0–10) and maps to exactly one label using these bands: 0–5 Critical Zone; 6–7 Need to review your financial plan; 8–9 Good; 10 Secure. Display 'Your score: X/10' and the band label after submit, and allow users to change answers and re-submit (or update results live) without refresh. Use shadcn-ui components (e.g., Alert/Badge/Card) for results presentation; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add a Contact page/section reachable from the questionnaire that offers financial health review and a WhatsApp 'Contact Now' button to +91 88299 21156.",
+      "acceptanceCriteria": [
+        "There is a visible way to reach the Contact page/section from the main questionnaire page (e.g., top nav link/button).",
+        "The Contact Now button opens WhatsApp using a link targeting phone number 918829921156 (e.g., https://wa.me/918829921156).",
+        "The Contact page/section contains clear English copy indicating the user can request a review of their financial health."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "create",
+          "description": "Create a dedicated Contact view containing clear English copy offering a review of the user's financial health by the app owner and a primary 'Contact Now' button linking to https://wa.me/918829921156. Use shadcn-ui components (e.g., Card, Button) for consistent styling; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the Contact view into app navigation from the main questionnaire view (e.g., header nav link/button) so it is clearly reachable. Use shadcn-ui components for navigation controls where appropriate; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply branding assets: background image behind main layout and Axis Max Life logo in the UI, using locally served static assets from frontend/public/assets/generated.",
+      "acceptanceCriteria": [
+        "The Financial Health Check-Up page uses a background image asset (served from frontend/public/assets/generated) and remains readable (overlay/blur/tint as needed).",
+        "An Axis Max Life logo image is displayed prominently and does not distort (keeps aspect ratio).",
+        "No image assets are fetched from the backend; they are served as static files from the frontend."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/financial-health-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the provided generated background image asset at this exact path so it can be served statically by the frontend build."
+        },
+        {
+          "path": "frontend/public/assets/generated/axis-max-life-logo.dim_600x200.png",
+          "operation": "create",
+          "description": "Add the provided generated Axis Max Life logo asset at this exact path so it can be served statically by the frontend build."
+        },
+        {
+          "path": "frontend/src/components/BrandedLayout.tsx",
+          "operation": "create",
+          "description": "Create a shared layout wrapper that applies the background image from frontend/public/assets/generated/financial-health-bg.dim_1920x1080.png behind the main content (with readability overlay) and renders the logo from frontend/public/assets/generated/axis-max-life-logo.dim_600x200.png in a header area with preserved aspect ratio. Use shadcn-ui components (e.g., Container/Card) to structure the layout; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap the questionnaire and contact views with BrandedLayout so the background and logo appear consistently across the required screens (no backend image fetching)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Define and apply a consistent professional finance/insurance theme across questionnaire, results, and contact views, avoiding a blue+purple primary palette.",
+      "acceptanceCriteria": [
+        "A consistent theme is applied across all screens (questionnaire, results, contact).",
+        "The chosen primary palette is not blue+purple.",
+        "UI components (buttons, cards, inputs) look cohesive and professional on mobile and desktop."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define global theme tokens (CSS variables used by Tailwind/shadcn styling) and base typography/spacing defaults for a professional finance/insurance look, ensuring the primary palette is not a blue+purple combination. Keep styling compatible with shadcn-ui conventions; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions (if needed) to support the chosen non-blue+purple brand palette and consistent typography/spacing across the app while continuing to use the existing CSS-variable-based color system."
+        },
+        {
+          "path": "frontend/src/pages/FinancialHealthCheckUp.tsx",
+          "operation": "modify",
+          "description": "Ensure the questionnaire + results sections use the shared theme (cards, button hierarchy, spacing, and typography) and remain polished on mobile and desktop using shadcn-ui building blocks; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/Contact.tsx",
+          "operation": "modify",
+          "description": "Ensure the contact view matches the same theme (typography, card styling, CTA button styling) as the questionnaire/results for a coherent professional experience using shadcn-ui components; verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-dynamic-professional-financial-health-check-up-page-that-presents-exactly-10-provided-questions-with-yes-no-answers-only-no-free-text-allowing-the-user-to-answer-all-questions-and-submit",
+      "featureTitle": "Create a dynamic, professional Financial Health Check-Up page that presents exactly 10 provided questions with Yes/No answers only (no free-text), allowing the user to answer all questions and submit.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/FinancialHealthCheckUp.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-scoring-and-results-display-based-on-the-total-number-of-yes-answers-and-show-the-result-immediately-after-submission-use-these-result-bands-inclusive-0-5-critical-zone-6-7-need-to-review-your-financial-plan-8-9-good-10-secure-also-display-the-numeric-score-e-g-your-score-7-10",
+      "featureTitle": "Implement scoring and results display based on the total number of “Yes” answers, and show the result immediately after submission. Use these result bands (inclusive): 0–5 = \"Critical Zone\"; 6–7 = \"Need to review your financial plan\"; 8–9 = \"Good\"; 10 = \"Secure\". Also display the numeric score (e.g., “Your score: 7/10”).",
+      "files": [
+        "frontend/src/pages/FinancialHealthCheckUp.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-dedicated-contact-page-or-clearly-separated-contact-section-reachable-via-navigation-offering-a-review-of-the-user-s-financial-health-by-the-app-owner-including-a-contact-now-button-that-opens-whatsapp-chat-to-91-88299-21156-use-a-wa-me-link",
+      "featureTitle": "Add a dedicated Contact page (or clearly separated Contact section reachable via navigation) offering a review of the user’s financial health by the app owner, including a “Contact Now” button that opens WhatsApp chat to +91 88299 21156 (use a wa.me link).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Contact.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-branding-set-a-provided-background-image-behind-the-main-page-layout-and-display-an-axis-max-life-logo-in-the-ui-e-g-header-top-left-use-locally-served-static-assets-from-frontend-public-assets-generated",
+      "featureTitle": "Apply branding: set a provided background image behind the main page layout and display an Axis Max Life logo in the UI (e.g., header/top-left). Use locally served static assets from frontend/public/assets/generated.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BrandedLayout.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-and-apply-a-consistent-coherent-visual-theme-for-a-professional-finance-insurance-experience-colors-typography-spacing-component-styling-across-the-questionnaire-and-contact-views-do-not-use-a-blue-purple-primary-palette",
+      "featureTitle": "Create and apply a consistent, coherent visual theme for a professional finance/insurance experience (colors, typography, spacing, component styling) across the questionnaire and contact views. Do not use a blue+purple primary palette.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/Contact.tsx",
+        "frontend/src/pages/FinancialHealthCheckUp.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

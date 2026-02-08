@@ -1,0 +1,85 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-08T11:05:45.887Z",
+  "summary": "The diff adds a new frontend questionnaire page, scoring logic, branded layout with background + logo, and a contact page with WhatsApp CTA. However, some acceptance criteria cannot be confirmed from the truncated diffs, and several unrequested/explicitly non-goal features (Internet Identity/react-query/actor hook scaffolding and an empty backend actor) were added.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "A Submit (or equivalent) action is available and is disabled until all 10 questions are answered.",
+      "reason": "The component computes `allAnswered` and checks it in `handleSubmit`, but the diff snippet is truncated before the Submit button rendering, so there is no evidence the Submit control exists and is disabled until all questions are answered.",
+      "evidence": [
+        "frontend/src/pages/FinancialHealthCheckUp.tsx (truncated)"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Display the numeric score (e.g., “Your score: 7/10”) and show the result immediately after submission.",
+      "reason": "Score is computed and result bands are determined, but the diff is truncated before the results UI rendering, so there is no evidence that the numeric score text is displayed after submission.",
+      "evidence": [
+        "frontend/src/pages/FinancialHealthCheckUp.tsx (truncated)"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Use the exact result label text for the 6–7 band: \"Need to review your financial plan\".",
+      "reason": "The implemented label is \"Need to Review Your Financial Plan\", which differs in capitalization from the specified string.",
+      "evidence": [
+        "frontend/src/pages/FinancialHealthCheckUp.tsx (truncated)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Added a backend Motoko canister file with an empty actor, despite the request stating backend work is not necessary for this feature.",
+      "reason": "BuildRequest says \"only add backend work if strictly necessary (this feature can be frontend-only)\"; the diff adds `backend/main.mo` with `actor {}` but no frontend evidence requires it.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Introduced Internet Identity authentication scaffolding (provider + hooks) even though implementing Internet Identity authentication is a non-goal.",
+      "reason": "The BuildRequest explicitly lists \"Implementing Internet Identity authentication\" as a non-goal, yet the app wraps in `InternetIdentityProvider` and includes `useInternetIdentity` and `useActor` hooks.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts (truncated)",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Added React Query actor/query invalidation scaffolding for backend calls even though the app is intended to be frontend-only for this feature.",
+      "reason": "The BuildRequest indicates this feature can be frontend-only; the diff adds `useActor` using `@tanstack/react-query` and a placeholder `useQueries.ts`.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/main.tsx"
+      ]
+    },
+    {
+      "description": "Added a footer attribution link (\"Built with caffeine.ai\") which was not requested.",
+      "reason": "No requirement mentions adding attribution/footer content; this is additional UI content beyond the spec.",
+      "evidence": [
+        "frontend/src/components/BrandedLayout.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.66,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/BrandedLayout.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/Contact.tsx",
+    "frontend/src/pages/FinancialHealthCheckUp.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

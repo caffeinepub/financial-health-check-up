@@ -1,0 +1,9 @@
+{
+  "frontend/src/App.tsx": "Main application component managing page navigation between the financial health check-up questionnaire and contact page, wrapped in the branded layout.",
+  "frontend/src/components/BrandedLayout.tsx": "Shared layout wrapper that displays the background image, Axis Max Life logo in the header, navigation controls, and footer with attribution across all pages.",
+  "frontend/src/pages/FinancialHealthCheckUp.tsx": "Financial health questionnaire page displaying 10 yes/no questions, calculating scores (0-10), showing results with appropriate status badges (Critical Zone, Need Review, Good, Secure), and providing navigation to contact page.",
+  "frontend/src/pages/Contact.tsx": "Contact page offering professional financial guidance with a prominent WhatsApp \"Contact Now\" button linking to +91 88299 21156, along with service descriptions and benefits.",
+  "frontend/src/index.css": "Global styles defining a professional finance-themed color system using OKLCH with green and gold palette for trust and prosperity, including custom success and warning colors for financial status indicators.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with custom colors (success, warning), professional typography with Inter and Lexend fonts, and maintaining the OKLCH-based design system.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as the application is entirely client-side with no backend data requirements."
+}

@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        
+        /* Financial theme - Green & Gold palette for trust and growth */
+        --background: 0.98 0 0;
+        --foreground: 0.15 0 0;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.15 0 0;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0 0;
+        
+        /* Primary: Deep forest green - trust, stability, growth */
+        --primary: 0.42 0.12 155;
+        --primary-foreground: 0.98 0 0;
+        
+        /* Secondary: Warm gold - prosperity, value */
+        --secondary: 0.88 0.08 85;
+        --secondary-foreground: 0.25 0 0;
+        
+        --muted: 0.95 0 0;
+        --muted-foreground: 0.50 0 0;
+        
+        --accent: 0.92 0.06 155;
+        --accent-foreground: 0.25 0 0;
+        
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        
+        --border: 0.90 0 0;
+        --input: 0.90 0 0;
+        --ring: 0.42 0.12 155;
+        
+        /* Custom colors for financial status */
+        --success: 0.65 0.15 145;
+        --warning: 0.70 0.15 65;
+        
+        --chart-1: 0.65 0.15 145;
+        --chart-2: 0.70 0.15 65;
+        --chart-3: 0.55 0.20 220;
+        --chart-4: 0.75 0.12 35;
+        --chart-5: 0.60 0.18 280;
+    }
+
+    .dark {
+        --background: 0.12 0 0;
+        --foreground: 0.95 0 0;
+        
+        --card: 0.18 0 0;
+        --card-foreground: 0.95 0 0;
+        
+        --popover: 0.15 0 0;
+        --popover-foreground: 0.95 0 0;
+        
+        /* Primary: Bright emerald green for dark mode */
+        --primary: 0.68 0.18 155;
+        --primary-foreground: 0.12 0 0;
+        
+        /* Secondary: Soft gold */
+        --secondary: 0.75 0.12 85;
+        --secondary-foreground: 0.12 0 0;
+        
+        --muted: 0.25 0 0;
+        --muted-foreground: 0.65 0 0;
+        
+        --accent: 0.35 0.08 155;
+        --accent-foreground: 0.95 0 0;
+        
+        --destructive: 0.65 0.20 25;
+        --destructive-foreground: 0.12 0 0;
+        
+        --border: 1 0 0 / 12%;
+        --input: 1 0 0 / 15%;
+        --ring: 0.68 0.18 155;
+        
+        /* Custom colors for financial status - dark mode */
+        --success: 0.70 0.18 145;
+        --warning: 0.75 0.18 65;
+        
+        --chart-1: 0.70 0.18 145;
+        --chart-2: 0.75 0.18 65;
+        --chart-3: 0.60 0.22 220;
+        --chart-4: 0.80 0.15 35;
+        --chart-5: 0.65 0.20 280;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-semibold tracking-tight;
+    }
+}
+
+@layer utilities {
+    .text-success {
+        color: oklch(var(--success));
+    }
+    
+    .text-warning {
+        color: oklch(var(--warning));
+    }
+}

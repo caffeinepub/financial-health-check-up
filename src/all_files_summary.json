@@ -1,0 +1,18 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no backend logic.",
+  "feature_evidence.json": "Lists implemented features with associated files, components, test IDs, and confidence.",
+  "frontend-file-summaries.txt": "Provides prewritten summaries for key frontend files including pages, layout, styles, and hooks.",
+  "frontend/index.css": "Defines global Tailwind layers and OKLCH color variables for the app’s theme.",
+  "frontend/index.html": "Base HTML file mounting the React app via main.tsx.",
+  "frontend/src/App.tsx": "Root component handling navigation between checkup and contact pages inside the branded layout.",
+  "frontend/src/components/BrandedLayout.tsx": "Layout wrapper with branded background, logo, navigation buttons, and footer.",
+  "frontend/src/hooks/useActor.ts": "Creates and manages a backend actor instance based on Internet Identity authentication.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements Internet Identity auth context, login flow, and identity persistence.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder for future backend query hooks.",
+  "frontend/src/index.css": "Global financial-theme Tailwind variables and utilities using green/gold palettes for UI.",
+  "frontend/src/main.tsx": "Initializes React, query client, and Internet Identity provider before rendering App.",
+  "frontend/src/pages/Contact.tsx": "Implements a contact page with a WhatsApp CTA, service highlights, and a styled card layout for financial consultation outreach.",
+  "frontend/src/pages/FinancialHealthCheckUp.tsx": "Defines a 10‑question yes/no financial health questionnaire with scoring logic and dynamic result display.",
+  "frontend/tailwind.config.js": "Configures Tailwind with extended colors, fonts, animations, and container settings for the project’s UI theme.",
+  "project_state.json": "Stores project metadata, feature definitions, requirements, and notes for the financial health check‑up application."
+}
